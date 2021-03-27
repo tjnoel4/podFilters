@@ -7,7 +7,7 @@
 //Gold
 ItemDisplay[GOLD<100 CLVL<20]:
 ItemDisplay[GOLD<1000 (CLVL>19 AND CLVL<80)]:
-ItemDisplay[GOLD<6000 AND CLVL>79]:
+ItemDisplay[GOLD<5000 AND CLVL>79]:
 
 //Throws 35k+
 ItemDisplay[(7tk OR 7bk OR 7ta) (MAG OR RARE OR NMAG) (!ETH AND !INF)]: %GRAY%throw %GRAY%[%GREEN%35k%GRAY%]
