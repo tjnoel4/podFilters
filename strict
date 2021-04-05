@@ -17,13 +17,13 @@
 //
 // Hidden: All potions except supers and full rejuv, keys, scrolls
 // =============================================================
-ItemDisplay[GOLD<30000]:
+ItemDisplay[GOLD<15000]:
 ItemDisplay[leg]: %NAME%
 ItemDisplay[hp1 OR hp2 OR hp3 OR hp4 OR mp1 OR mp2 OR mp3 OR mp4 OR rvs]:
 ItemDisplay[gps OR ops OR gpm OR opm OR gpl OR opl]:
 ItemDisplay[key OR vps OR yps OR wms OR tsc OR isc]:
-ItemDisplay[hp5]: %RED%*%WHITE%Hp
-ItemDisplay[mp5]:	%BLUE%*%WHITE%Mp
+ItemDisplay[hp5]:
+ItemDisplay[mp5]:
 ItemDisplay[rvl]: %PURPLE%Full
 
 // =============================================================
@@ -63,8 +63,8 @@ ItemDisplay[(ma1 OR ma2 OR ma3 OR ma4 OR ma5 OR ma6 OR ma7 OR ma8 OR ma9 OR ma10
 // =============================================================
 ItemDisplay[RUNE>25]: %NL% %PURPLE%OOO      %ORANGE%%NAME%      %PURPLE%OOO %NL%%NOTIFY-ORANGE%
 ItemDisplay[RUNE>19 AND RUNE<26]: %NL% %PURPLE%OO  %ORANGE%%NAME%  %PURPLE%OO %NL%%NOTIFY-ORANGE%
-ItemDisplay[RUNE=18]: * %NAME% *%NOTIFY-ORANGE%
-ItemDisplay[RUNE>0 AND RUNE<20]:
+ItemDisplay[RUNE>11]: * %NAME% *%NOTIFY-ORANGE%
+ItemDisplay[RUNE>0 AND RUNE<12]:
 
 // Hidden: Unid Large charms, Grand charms <ilvl50, Small charms <ilvl50
 ItemDisplay[cm1 OR cm2 OR cm3 (!ID UNI)]: %NL% %PURPLE%OO  %GOLD%%NAME%  %PURPLE%OO %NL%%NOTIFY-GOLD%
