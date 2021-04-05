@@ -1,0 +1,198 @@
+// =============================================================================================
+//
+// Synpoo's ultra strict PoD Filter
+// v0.1.9f
+// Last updated: March 31 2021
+// Reach me at discord: synpoo#7377
+//
+// This filter was built for the endgame ONLY and WILL hide majority of items
+// Do not use if you are a new player
+//
+// =============================================================================================
+
+
+
+// =============================================================
+// BASIC ITEMS
+//
+// Hidden: All potions except supers and full rejuv, keys, scrolls
+// =============================================================
+ItemDisplay[GOLD<30000]:
+ItemDisplay[leg]: %NAME%
+ItemDisplay[hp1 OR hp2 OR hp3 OR hp4 OR mp1 OR mp2 OR mp3 OR mp4 OR rvs]:
+ItemDisplay[gps OR ops OR gpm OR opm OR gpl OR opl]:
+ItemDisplay[key OR vps OR yps OR wms OR tsc OR isc]:
+ItemDisplay[hp5]: %RED%*%WHITE%Hp
+ItemDisplay[mp5]:	%BLUE%*%WHITE%Mp
+ItemDisplay[rvl]: %PURPLE%Full
+
+// =============================================================
+// GEMS
+//
+// Hidden: All except flawless skull and all Perfects
+// =============================================================
+ItemDisplay[skl OR skz]: %NL% %TAN%%NAME% %NL%
+ItemDisplay[GEMLEVEL=1 OR GEMLEVEL=2 OR GEMLEVEL=3 OR GEMLEVEL=4]:
+
+// =============================================================
+// ENDGAME QUEST ITEMS AND POD ITEMS
+//
+// =============================================================
+// Essences
+ItemDisplay[tes]: %GRAY%  Essence%ORANGE% (Andariel and Duriel)  %NOTIFY-ORANGE%
+ItemDisplay[ceh]: %GRAY%  Essence%ORANGE% (Mephisto)  %NOTIFY-ORANGE%
+ItemDisplay[bet]: %GRAY%  Essence%ORANGE% (Diablo)  %NOTIFY-ORANGE%
+ItemDisplay[fed]: %GRAY%  Essence%ORANGE% (Baal)  %NOTIFY-ORANGE%
+
+// Keys and Organs
+ItemDisplay[pk1]: %NL% %PURPLE%O  %GRAY%Key%ORANGE% (Countess)  %PURPLE%O %NL%%NOTIFY-ORANGE%
+ItemDisplay[pk2]: %NL% %PURPLE%O  %GRAY%Key%ORANGE% (Summoner)  %PURPLE%O %NL%%NOTIFY-ORANGE%
+ItemDisplay[pk3]: %NL% %PURPLE%O  %GRAY%Key%ORANGE% (Nihlathak)  %PURPLE%O %NL%%NOTIFY-ORANGE%
+ItemDisplay[dhn OR bey OR mbr]: %NL% %PURPLE%**  %ORANGE%%NAME%  %PURPLE%** %NL%%NOTIFY-ORANGE%
+
+// PoD Items
+ItemDisplay[cx5]: %NL% %PURPLE%+ %NAME% + %NL%%NOTIFY-PURPLE%
+ItemDisplay[cx7]: %NAME%%NOTIFY-ORANGE%
+ItemDisplay[maz]: %RED%%NAME%%NOTIFY-RED%
+ItemDisplay[(ma1 OR ma2 OR ma3 OR ma4 OR ma5 OR ma6 OR ma7 OR ma8 OR ma9 OR ma10) !ID]: %NL% + %NAME% + %NOTIFY-ORANGE%%NL%
+
+// =============================================================
+// RUNES, JEWELS, CHARMS
+//
+// Hidden: Runes below Lem (Ko shows for unique armor upgrade recipe)
+// =============================================================
+ItemDisplay[RUNE>25]: %NL% %PURPLE%OOO      %ORANGE%%NAME%      %PURPLE%OOO %NL%%NOTIFY-ORANGE%
+ItemDisplay[RUNE>19 AND RUNE<26]: %NL% %PURPLE%OO  %ORANGE%%NAME%  %PURPLE%OO %NL%%NOTIFY-ORANGE%
+ItemDisplay[RUNE=18]: * %NAME% *%NOTIFY-ORANGE%
+ItemDisplay[RUNE>0 AND RUNE<20]:
+
+// Hidden: Unid Large charms, Grand charms <ilvl50, Small charms <ilvl50
+ItemDisplay[cm1 OR cm2 OR cm3 (!ID UNI)]: %NL% %PURPLE%OO  %GOLD%%NAME%  %PURPLE%OO %NL%%NOTIFY-GOLD%
+ItemDisplay[cm1 OR cm3 (!ID AND ILVL>50)]: %NL%  %NAME% [i%ILVL%]  %NL%%NOTIFY-BLUE%
+ItemDisplay[(cm1 OR cm2 OR cm3) !ID]:
+
+// Hidden: Unid Jewels <ilvl 45
+ItemDisplay[jew MAG !ID]: %NAME% [i%ILVL%]
+ItemDisplay[jew RARE !ID]: %NL%  %NAME% [i%ILVL%]  %NL%%NOTIFY-YELLOW%
+ItemDisplay[jew UNI !ID]: %NL%O    %NAME%    O%NL%%NOTIFY-GOLD%
+ItemDisplay[jew MAG OR RARE (!ID AND ILVL<45)]:
+
+// =============================================================
+// AMULETS, RINGS, BOLTS, ARROWS
+//
+// Hidden: (UNID) Magic amulets amulets/rings/quivers/arrows
+// - Unid Set rings
+// - Unid rare amulets/rings/arrows <ilvl74
+// =============================================================
+ItemDisplay[amu SET !ID]: %NL% O     %NAME%     O %NL%%NOTIFY-GREEN%
+ItemDisplay[amu OR rin (UNI !ID)]: %NL% %PURPLE%OO    %GOLD%%NAME%    %PURPLE%OO %NL%%NOTIFY-GOLD%
+ItemDisplay[amu OR rin (!ID RARE AND ILVL>74)]: + %NAME% [i%ILVL%] +%NOTIFY-YELLOW%
+ItemDisplay[aqv OR aq2 (!ID RARE AND ILVL>74)]: %NAME% [i%ILVL%]
+ItemDisplay[(amu OR rin OR aq2 OR cq2 OR aqv OR cqv) (NMAG OR MAG OR RARE) !ID]:
+ItemDisplay[(aq2 OR cq2 OR aqv OR cqv) UNI !ID]:
+ItemDisplay[rin SET !ID]:
+
+// =============================================================
+// WEAPONS
+//
+// =============================================================
+
+//Vendor items
+//SK88=1 =32453 Gold. SK73=1 =32453 Gold.
+ItemDisplay[WP12 NMAG !ETH (wnd OR ywn OR 9wn) ILVL>49 (SK73>0 OR SK79=3 OR SK82=3 OR SK83>1 OR SK85=3 OR SK86>1 OR SK87>0 OR SK88>0 OR SK89>0 OR SK90>1 OR SK91>1 OR SK92>0 OR SK93>0 OR SK94>0 OR SK95>0)]: %ORANGE%$%PRICE%
+ItemDisplay[WP12 NMAG !ETH SOCK=1 (SK73>0 OR SK79=3 OR SK82=3 OR SK83>1 OR SK85=3 OR SK86>1 OR SK87>0 OR SK88>0 OR SK89>0 OR SK90>1 OR SK91>1 OR SK92>0 OR SK93>0 OR SK94>0 OR SK95>0)]: %ORANGE%$%PRICE%
+ItemDisplay[NMAG !ETH !ED=15 (7tk OR 7ta OR 7bk)]: %ORANGE%$%PRICE%
+
+// UNIQUE
+// titans, tstroke, windforce
+ItemDisplay[UNI (ama OR amf OR 6lw) !ETH !ID]: %NL% %PURPLE%+ %GOLD%%NAME% %PURPLE%+ %NL%%NOTIFY-GOLD%
+// death cleaver, executioners justice, bartucs
+ItemDisplay[UNI (7wa OR 7gi OR 9tw) !ETH !ID]: %NL% %PURPLE%+ %GOLD%%NAME% %PURPLE%+ %NL%%NOTIFY-GOLD%
+// fleshripper, death's web
+ItemDisplay[UNI (7kr OR 7gw) !ETH !ID]: %NL% %PURPLE%+ %GOLD%%NAME% %PURPLE%+ %NL%%NOTIFY-GOLD%
+// occy, eschutas, fathom
+ItemDisplay[UNI (oba OR obc OR obf) !ETH !ID]: %NL% %PURPLE%+ %GOLD%%NAME% %PURPLE%+ %NL%%NOTIFY-GOLD%
+// grandfather
+ItemDisplay[UNI 7gd !ETH !ID]: %NL% %PURPLE%+ %GOLD%%NAME% %PURPLE%+ %NL%%NOTIFY-GOLD%
+// eth reaper's toll
+ItemDisplay[UNI 7s8 ETH !ID]: %NL% %PURPLE%+ %GOLD%%NAME% %PURPLE%+ %NL%%NOTIFY-GOLD%
+// ondals, azurewrath/lightsabre
+ItemDisplay[UNI (6cs OR 7cr) !ETH !ID]: %NL% %PURPLE%+ %GOLD%%NAME% %PURPLE%+ %NL%%NOTIFY-GOLD%
+
+// SET
+// nats wep
+ItemDisplay[SET 7qr !ETH !ID]: %NL% + %NAME% + %NL%%NOTIFY-GREEN%
+
+// RUNEWORD BASES
+// 4os 10ed+ GMB+3 skill
+ItemDisplay[amc SUP ED>9 SOCK=4 TABSK0=3 !ETH !RW]: %NL%  %DARK_GREEN%%NAME% %RED%+3bow %SOCKETS%os  %NL%%NOTIFY-GRAY%
+// 4os 10+ed eth thresher/giant thresher/mancatcher
+ItemDisplay[(7s8 OR 7wc OR 7br) SUP ED>9 SOCK=4 ETH !RW]: %NL%  %DARK_GREEN%%NAME% %RED%%SOCKETS%os +ED ETH  %NL%%NOTIFY-GRAY%
+// 6os normal eth war pike
+ItemDisplay[7p7 NMAG SOCK=6 ETH !RW]: %NL%  %DARK_GREEN%%NAME% %RED%%SOCKETS%os ETH  %NL%%NOTIFY-GRAY%
+// 0 or 6os superior eth war pike
+ItemDisplay[7p7 SUP (SOCK=0 OR SOCK=6) ED>0 ETH !RW]: %NL%  %DARK_GREEN%%NAME% %RED%%SOCKETS%os ETH  %NL%%NOTIFY-GRAY%
+// 5os+ superior zerker
+ItemDisplay[7wa SUP SOCK>4 !RW]: %NL%  %DARK_GREEN%%NAME% %RED%%SOCKETS%os  %NL%%NOTIFY-GRAY%
+// 5os+ eth superior zerker, col blade, col sword
+ItemDisplay[(7wa OR 7gd OR 7fb) SUP SOCK>4 ETH !RW]: %NL%  %DARK_GREEN%%NAME% %RED%%SOCKETS%os ETH  %NL%%NOTIFY-GRAY%
+// 3os elite sin claw +3 light sentry
+ItemDisplay[!NORM CL5 NMAG (SOCK=0 OR SOCK=3) SK271=3 !RW]: %NL%  %DARK_GREEN%%NAME% %RED%+3 Sentry %SOCKETS%os  %NL%%NOTIFY-GRAY%
+// 3os elite sin claw +3 wake
+ItemDisplay[!NORM CL5 NMAG (SOCK=0 OR SOCK=3) SK262=3 !RW]: %NL%  %DARK_GREEN%%NAME% %RED%+3 Wake %SOCKETS%os  %NL%%NOTIFY-GRAY%
+
+// hide all else
+ItemDisplay[WEAPON (MAG OR RARE OR UNI OR SET) !ID]:
+ItemDisplay[WEAPON NMAG !RW]:
+
+// =============================================================
+// ARMOR
+//
+// =============================================================
+
+// UNIQUE
+// arreats, jalal's, ravenlore
+ItemDisplay[UNI (baa OR dra OR dre) !ETH !ID]: %NL% %PURPLE%+ %GOLD%%NAME% %PURPLE%+ %NL%%NOTIFY-GOLD%
+// arach, griffs
+ItemDisplay[UNI (ulc OR ci3) !ETH !ID]: %NL% %PURPLE%O %GOLD%%NAME% %PURPLE%O %NL%%NOTIFY-GOLD%
+// tyrael
+ItemDisplay[UNI uar !ID]: %NL% %PURPLE%O %GOLD%%NAME% %PURPLE%O %NL%%NOTIFY-GOLD%
+// vmagi, shaft, skullders
+ItemDisplay[UNI (xea OR xhn OR xpl) !ETH !ID]: %NL% %PURPLE%+ %GOLD%%NAME% %PURPLE%+ %NL%%NOTIFY-GOLD%
+// arkaines, gbane, tgods
+ItemDisplay[UNI (upl OR utu OR zhb) !ETH !ID]: %NL% %PURPLE%+ %GOLD%%NAME% %PURPLE%+ %NL%%NOTIFY-GOLD%
+// silks, war trav, dracs
+ItemDisplay[UNI (xmb OR xtb OR uvg) !ETH !ID]: %NL% %PURPLE%+ %GOLD%%NAME% %PURPLE%+ %NL%%NOTIFY-GOLD%
+// shako, steelshade, nightwings veil
+ItemDisplay[UNI (uap OR ulm OR uhm) !ETH !ID]: %NL% %PURPLE%O %GOLD%%NAME% %PURPLE%O %NL%%NOTIFY-GOLD%
+// andys, gaze
+ItemDisplay[UNI (usk OR xh9) !ETH !ID]: %NL% %PURPLE%O %GOLD%%NAME% %PURPLE%O %NL%%NOTIFY-GOLD%
+// hoz, stormshield, homunc, darkforce
+ItemDisplay[UNI (pa9 OR uit OR nea OR nef) !ETH !ID]: %NL% %PURPLE%+ %GOLD%%NAME% %PURPLE%+ %NL%%NOTIFY-GOLD%
+
+// SET
+// aldurs boots, trang helm
+ItemDisplay[SET (xtb OR uh9) !ETH !ID]: %NL% + %NAME% + %NL%%NOTIFY-GREEN%
+// tals chest
+ItemDisplay[SET uth !ETH !ID]: %NL% + %NAME% + %NL%%NOTIFY-GREEN%
+
+// RUNEWORD BASES
+// 3os+ superior 15ed mage, dusk, archon
+ItemDisplay[SUP (xtp OR uui OR utp) SOCK>2 ED=15 !ETH !RW]: %NL%  %DARK_GREEN%%NAME% +15%ed %RED%%SOCKETS%os  %NL%%NOTIFY-GRAY%
+// 3os+ 15ed eth elite armors (treachery, stone, duress)
+ItemDisplay[SUP ELT EQ2 SOCK>2 ED=15 ETH !RW]: %NL%  %DARK_GREEN%%NAME% +15%ed %RED%%SOCKETS%os ETH  %NL%%NOTIFY-GRAY%
+// 0 socket or 4os 44-45res eth sacred targe, vortex shield
+ItemDisplay[NMAG (pab OR paf) (SOCK=0 OR SOCK=4) RES=44 ETH !RW]: %NL%  %DARK_GREEN%%NAME% +15%ed %YELLOW%44@res %RED%%SOCKETS%os ETH  %NL%%NOTIFY-GRAY%
+ItemDisplay[NMAG (pab OR paf) (SOCK=0 OR SOCK=4) RES=45 ETH !RW]: %NL%  %DARK_GREEN%%NAME% +15%ed %YELLOW%45@res %RED%%SOCKETS%os ETH  %NL%%NOTIFY-GRAY%
+// 0 socket or 4os 15ed eth sacred targe, vortex shield (exile)
+ItemDisplay[SUP (pab OR paf) (SOCK=0 OR SOCK=4) ED=15 ETH !RW]: %NL%  %DARK_GREEN%%NAME% +15%ed %RED%%SOCKETS%os ETH  %NL%%NOTIFY-GRAY%
+// 0 socket or 4os -10req monarch
+ItemDisplay[SUP uit (SOCK=0 OR SOCK=4) ITEMSTAT91=-10 !ETH !RW]: %NL%  %DARK_GREEN%%NAME% -10%req %RED%%SOCKETS%os  %NL%%NOTIFY-GRAY%
+
+// RARES >ilvl79
+// gloves, boots, circs
+ItemDisplay[RARE (EQ4 OR EQ5 OR EQ7) ILVL>79 !ETH !ID]: %NAME% [i%ILVL%]
+
+// hide all else
+ItemDisplay[ARMOR (MAG OR RARE OR UNI OR SET) !ID]:
+ItemDisplay[ARMOR NMAG !RW]:
