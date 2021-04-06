@@ -17,7 +17,7 @@
 //
 // Hidden: All potions except supers and full rejuv, keys, scrolls
 // =============================================================
-ItemDisplay[GOLD<15000]:
+ItemDisplay[GOLD<10000]:
 ItemDisplay[leg]: %NAME%
 ItemDisplay[hp1 OR hp2 OR hp3 OR hp4 OR mp1 OR mp2 OR mp3 OR mp4 OR rvs]:
 ItemDisplay[gps OR ops OR gpm OR opm OR gpl OR opl]:
